@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
+
 
 @Controller
 public class FileController {
@@ -24,10 +23,10 @@ public class FileController {
 
     
     @GetMapping("/")
-    public String index(Model model) throws IOException {
-        model.addAttribute("files", fileService.list());
-        return "index";
-    }
+public String index(Model model) {
+    model.addAttribute("files", fileService.list());
+    return "index";
+}
 
     
     @PostMapping("/upload")
